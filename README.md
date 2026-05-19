@@ -208,7 +208,7 @@ plt.show()
 #### 📊 Visual Chart Outcome:
 ![](images/employment_defaults.png)
 
-* **Analytical Finding:** Unemployed applicants carry the absolute highest proportional default rate due to the complete lack of a regular salary stream. However, self-employed applications also carry substantial default numbers due to irregular business cash flow cycles.
+* **Insight:** Unemployed applicants carry the absolute highest proportional default rate due to the complete lack of a regular salary stream. However, self-employed applications also carry substantial default numbers due to irregular business cash flow cycles.
 
 ---
 

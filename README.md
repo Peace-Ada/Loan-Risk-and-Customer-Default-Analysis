@@ -87,7 +87,7 @@ Customer ID   Age   Employment Status   Loan Amount
 1077          27    Unemployed          2,767,867
 ```
 
-* **Analytical Finding:** Sorting the data reveals that our largest individual loans reach up to nearly \$3 Million per customer (such as Customer 1147 at \$2,998,073). Crucially, the data shows that some of these top-exposure loans were given to **unemployed** individuals. Funding multi-million dollar loans for borrowers without a reliable income source creates an extreme concentration of risk for CrediTrust.
+* **Insight:** Sorting the data reveals that our largest individual loans reach up to nearly \$3 Million per customer (such as Customer 1147 at \$2,998,073). Crucially, the data shows that some of these top-exposure loans were given to **unemployed** individuals. Funding multi-million dollar loans for borrowers without a reliable income source creates an extreme concentration of risk for CrediTrust.
 
 ---
 
@@ -160,36 +160,15 @@ plt.show()
 #### 📊 Visual Chart Outcome:
 ![](images/loan_purposes.png)
 
-* **Analytical Finding:** Personal loans and Business loans dominate our portfolio volume. Because these two categories are typically "unsecured" product lines—meaning they lack strong concrete physical collateral like a vehicle or real estate asset—they represent the highest risk products for CrediTrust to fund without strict underwriting.
+* **Insight:** Personal loans and Business loans dominate our portfolio volume. Because these two categories are typically "unsecured" product lines—meaning they lack strong concrete physical collateral like a vehicle or real estate asset—they represent the highest risk products for CrediTrust to fund without strict underwriting.
 
 ---
 
 ## 📉 5. Default Risk Analysis (Identifying Risk Drivers)
 
-### Business Question 5: Do borrowers who default have a history of defaulting before?
-* **Objective:** Check if past loan defaults are a reliable warning indicator for current loan performance.
-
-#### 💻 Code Query Used:
-```python
-print(pd.crosstab(loan['previous default'], loan['defaulted']))
-
-plt.figure(figsize=(7, 4))
-sns.countplot(data=loan, x='previous default', hue='defaulted', palette='Set1')
-plt.title('Current Defaults vs Past Default History')
-plt.xlabel('Had a Previous Default?')
-plt.ylabel('Number of Customers')
-plt.legend(title='Defaulted Now?')
-plt.show()
-```
-
-#### 📊 Visual Chart Outcome:
-![](images/previous_defaults_chart.png)
-
-* **Analytical Finding:** Borrowers who have defaulted in the past make up a massive portion of the current defaults (the 'recidivism effect'). Past behavior is the single strongest indicator of future financial reliability. Approving loans for customers with a documented history of default represents a major breakdown in the underwriting process.
-
 ---
 
-### Business Question 6: Do people who default have a lower average credit score?
+### Business Question 5: Do people who default have a lower average credit score?
 * **Objective:** Compare the credit scores of people who successfully paid back their loans versus those who defaulted.
 
 #### 💻 Code Query Used:
@@ -207,11 +186,11 @@ plt.show()
 #### 📊 Visual Chart Outcome:
 ![](images/credit_score_comparison.png)
 
-* **Analytical Finding:** There is a clear, definitive 70-point gap between the two groups. Those who pay consistently maintain an average score of 602, while those who fail to pay fall deep into subprime territory with an average score of 532. This proves that an automated credit floor is required to screen out unsafe applicants.
+* **Insight:** There is a clear, definitive 70-point gap between the two groups. Those who pay consistently maintain an average score of 602, while those who fail to pay fall deep into subprime territory with an average score of 532. This proves that an automated credit floor is required to screen out unsafe applicants.
 
 ---
 
-### Business Question 7: Does a borrower's employment status affect their likelihood of defaulting?
+### Business Question 6: Does a borrower's employment status affect their likelihood of defaulting?
 * **Objective:** Evaluate how different employment sectors handle their financial repayment agreements.
 
 #### 💻 Code Query Used:
@@ -235,7 +214,7 @@ plt.show()
 
 ## 🎯 6. Rule-Based Portfolio Risk Segmentation
 
-### Business Question 8: How many of the current borrowers fall into High, Medium, and Low risk tiers?
+### Business Question 7: How many of the current borrowers fall into High, Medium, and Low risk tiers?
 * **Objective:** Programmatically divide the database into actionable categories using a multi-conditional rule-based function.
 
 #### 💻 Code Query Used:
@@ -262,11 +241,11 @@ plt.show()
 #### 📊 Visual Chart Outcome:
 ![](images/risk_segmentation.png)
 
-* **Analytical Finding:** A staggering 72.7% (109 out of 150) of the active accounts belong in the High-Risk category. This means CrediTrust is heavily exposed to subprime capital losses because the baseline approval filter has been far too lenient.
+* **Insight:** A staggering 72.7% (109 out of 150) of the active accounts belong in the High-Risk category. This means CrediTrust is heavily exposed to subprime capital losses because the baseline approval filter has been far too lenient.
 
 ---
 
-### Business Question 9: Which loan purposes are our high-risk customers mostly applying for?
+### Business Question 8: Which loan purposes are our high-risk customers mostly applying for?
 * **Objective:** Identify which loan product categories hold the highest concentration of toxic debt.
 
 #### 💻 Code Query Used:
@@ -284,7 +263,7 @@ plt.show()
 #### 📊 Visual Chart Outcome:
 ![](images/risk_purpose_chart.png)
 
-* **Analytical Finding:** High-risk borrowers are not isolated to a single category—they are spread heavily across all four loan purposes. However, they are most dangerous inside the Personal and Business loan segments because these accounts lack physical property collateral for the company to seize and liquidate during a default emergency.
+* **Insight:** High-risk borrowers are not isolated to a single category—they are spread heavily across all four loan purposes. However, they are most dangerous inside the Personal and Business loan segments because these accounts lack physical property collateral for the company to seize and liquidate during a default emergency.
 
 ---
 
@@ -309,5 +288,5 @@ The data shows that loan defaults are predictable. CrediTrust management should 
    * **The Impact:** This allows credit officers to step in with a payment plan immediately before a total default occurs.
 ---
 
-## 🏁 9. Conclusion
+## 🏁 8. Conclusion
 CrediTrust's severe **46.67% portfolio default rate** is an underwriting and asset-filtering failure, not a market anomaly. The data clearly proves that loan defaults are tightly concentrated among applicants with subprime credit profiles, previous default histories, or volatile employment positions. By shifting from a loose screening model to the automated, data-validated risk tier structures outlined in this report, CrediTrust can systematically insulate its capital reserves, steady monthly cash flows, and build a safe, profitable loan portfolio.

@@ -141,7 +141,7 @@ plt.show()
 ##### 📊 Visual Chart Outcome:
 ![](images/monthly_installment_outliers.png)
 
-* **Analytical Finding:** Looking at all four charts separately, the numbers are wide but completely realistic. There are no impossible data entry mistakes that need to be deleted or cleaned out. This confirms that the high default problem is completely driven by actual customer credit profiles, not broken data.
+* **Analytical Findings:** Looking at all four charts separately, the numbers are wide but completely realistic. There are no impossible data entry mistakes that need to be deleted or cleaned out. This confirms that the high default problem is completely driven by actual customer credit profiles, not broken data.
 
 ---
 

@@ -1,5 +1,5 @@
 
-# 🏦 CrediTrust: Credit Risk Mitigation & Portfolio Default Analysis
+# 🏦 CrediTrust: Loan Risk and Customer Default Analysis
 
 ## Tools Used
 * **Programming Language:** Python 3.x

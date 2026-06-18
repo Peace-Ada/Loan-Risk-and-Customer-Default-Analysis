@@ -1,6 +1,22 @@
 
 # 🏦 CrediTrust: Loan Risk and Customer Default Analysis
 
+# Table of Contents
+
+- [Project Overview](#project-overview)
+- [Business Problem](#business-problem)
+- [Objectives](#objectives)
+- [Data Source](#data-source)
+- [Tools Used](#tools-used)
+- [Data Preparation](#data-preparation)
+- [Feature Engineering](#feature-engineering)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Executive KPI Summary](#executive-kpi-summary)
+- [Key Business Insights](#key-business-insights)
+- [Business Recommendations](#business-recommendations)
+- [Conclusion](#conclusion)
+- [Connect With Me](#connect-with-me)
+
 ## Tools Used
 * **Programming Language:** Python 3.x
 * **Core Libraries Used:** 
@@ -9,22 +25,15 @@
   * `seaborn` - Used for statistical charts, data distributions, and categorical matrix mapping.
 
 ---
+## Objectives
 
-## 📌 1. Project Objectives & Tasks
+The primary objectives of this project are to:
 
-### Core Objectives
-1. **Improve data quality:** Clean and prepare the dataset so it is completely accurate for analysis.
-2. **Identify key drivers of loan default:** Find out exactly what factors cause a customer to fail to pay back their loan.
-3. **Segment customers based on risk:** Categorize borrowers into clear risk tiers.
-4. **Provide actionable business recommendations:** Suggest concrete strategies that management can use to lower risk.
-
-### Project Tasks Followed
-* **Data Understanding & Preparation:** Assessed the health of our data and performed cleaning steps.
-* **Descriptive Analysis:** Analyzed how loans are distributed and studied overall customer behavior.
-* **Default Risk Analysis:** Looked deep into the data to identify the exact factors influencing defaults.
-* **Customer Segmentation:** Programmatically categorized customers into different risk levels.
-* **Business Recommendations:** Proposed data-backed strategies to help the company reduce financial risk.
-
+- Improve data quality through cleaning and validation.
+- Identify the factors associated with loan default.
+- Classify borrowers into risk categories.
+- Support lending decisions with data-driven insights.
+- Recommend strategies to reduce default risk and improve portfolio performance.
 ---
 
 ## 📊 2. Executive KPI Snapshot

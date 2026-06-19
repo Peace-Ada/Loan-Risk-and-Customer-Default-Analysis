@@ -45,12 +45,22 @@ The primary objectives of this project are to:
 - Support lending decisions with data-driven insights.
 - Recommend strategies to reduce default risk and improve portfolio performance.
 ---
+
+## Dataset Overview
+
+The dataset contains **150 customer loan records** across multiple variables, including age, income, loan amount, credit score, employment status, loan purpose, and repayment status.
+
+It was provided by **Tech Studio Academy** as part of a project-based data analytics programme for credit risk analysis.
+
+![Dataset Preview](images/dataset_preview.png)
+
+---
 ## Tools Used
-* **Programming Language:** Python 3.x
-* **Core Libraries Used:** 
-  * `pandas` - Used for data profiling, structural data cleansing, and feature engineering.
-  * `matplotlib.pyplot` - Used for charting canvas layout architectures.
-  * `seaborn` - Used for statistical charts, data distributions, and categorical matrix mapping.
+
+- **Python:** Data cleaning, exploratory data analysis, feature engineering, and customer risk segmentation.
+- **Pandas:** Data manipulation and analysis.
+- **Jupyter Notebook:** End-to-end analytical workflow and documentation.
+---
 
 
 ## 📊 2. Executive KPI Snapshot

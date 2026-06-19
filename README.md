@@ -17,12 +17,22 @@
 - [Conclusion](#conclusion)
 - [Connect With Me](#connect-with-me)
 
-## Tools Used
-* **Programming Language:** Python 3.x
-* **Core Libraries Used:** 
-  * `pandas` - Used for data profiling, structural data cleansing, and feature engineering.
-  * `matplotlib.pyplot` - Used for charting canvas layout architectures.
-  * `seaborn` - Used for statistical charts, data distributions, and categorical matrix mapping.
+# Project Overview
+
+Loan defaults are a major challenge for financial institutions because they increase financial risk and reduce profitability.
+
+This project analyzes customer loan data from CrediTrust to identify patterns in borrower behavior, understand the factors linked to loan default, and support better lending decisions.
+
+Using Python, the analysis transforms raw data into meaningful insights through data preparation, exploratory data analysis, customer risk segmentation, and business recommendations.
+
+---
+# Business Problem
+
+CrediTrust is experiencing an increase in loan defaults and needs a better way to identify high-risk borrowers.
+
+Without clear insights into the factors associated with default, lending decisions become more difficult and the risk of financial loss increases.
+
+This project analyzes customer and loan data to identify default patterns, classify borrowers by risk level, and provide data-driven recommendations to improve credit risk management.
 
 ---
 ## Objectives
@@ -35,6 +45,13 @@ The primary objectives of this project are to:
 - Support lending decisions with data-driven insights.
 - Recommend strategies to reduce default risk and improve portfolio performance.
 ---
+## Tools Used
+* **Programming Language:** Python 3.x
+* **Core Libraries Used:** 
+  * `pandas` - Used for data profiling, structural data cleansing, and feature engineering.
+  * `matplotlib.pyplot` - Used for charting canvas layout architectures.
+  * `seaborn` - Used for statistical charts, data distributions, and categorical matrix mapping.
+
 
 ## 📊 2. Executive KPI Snapshot
 By executing descriptive aggregations in Python,A baseline dashboard of CrediTrust's current financial posture across all 150 active accounts was established:

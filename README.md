@@ -17,7 +17,7 @@
 - [Conclusion](#conclusion)
 - [Connect With Me](#connect-with-me)
 
-# Project Overview
+## Project Overview
 
 Loan defaults are a major challenge for financial institutions because they increase financial risk and reduce profitability.
 
@@ -26,7 +26,7 @@ This project analyzes customer loan data from CrediTrust to identify patterns in
 Using Python, the analysis transforms raw data into meaningful insights through data preparation, exploratory data analysis, customer risk segmentation, and business recommendations.
 
 ---
-# Business Problem
+## Business Problem
 
 CrediTrust is experiencing an increase in loan defaults and needs a better way to identify high-risk borrowers.
 

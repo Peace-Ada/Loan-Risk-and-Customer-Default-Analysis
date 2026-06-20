@@ -52,14 +52,14 @@ The dataset contains **150 customer loan records** across multiple variables, in
 
 It was provided by **Tech Studio Academy** as part of a project-based data analytics programme for credit risk analysis.
 
-![Dataset Preview](images/dataset_preview.png)
+![Dataset Preview (`loan.head()` output)](images/dataset_preview.png)
 
 ---
 ## Tools Used
 
-- **Python:** Data cleaning, exploratory data analysis, feature engineering, and customer risk segmentation.
-- **Pandas:** Data manipulation and analysis.
-- **Jupyter Notebook:** End-to-end analytical workflow and documentation.
+- **Python:** Used for data cleaning, exploratory data analysis, feature engineering, and customer risk segmentation.
+- **Pandas:** Used for data manipulation, transformation, and analysis.
+- **Jupyter Notebook:** Used to develop and document the end-to-end analytical workflow.
 ---
 
 
@@ -76,18 +76,38 @@ By executing descriptive aggregations in Python,A baseline dashboard of CrediTru
 > **Analytical Note:** A portfolio default rate of 46.67% means that nearly 1 out of every 2 borrowers is failing to pay back their loan. In retail consumer lending, a safe and manageable default rate typically falls between 3% and 7%. CrediTrust is facing an operational emergency that requires immediate structural intervention.
 
 ---
+## Data Preparation
 
-##  3. Data Understanding & Preparation Pipeline
-A data analysis project is only as reliable as the underlying data quality. The following technical validation checks were performed in Python to confirm database integrity before modeling:
+Before the analysis, the dataset was cleaned and validated to ensure reliable and accurate results.
 
-* **Completeness Assessment (`loan.isnull().sum()`):** Confirmed `0` missing values across all 12 variables. No statistical imputation or data guesswork was required.
-* **Uniqueness Validation (`loan.duplicated().sum()`):** Confirmed `0` duplicate entries. Every row represents an entirely unique, isolated borrower profile.
-* **Structural Integrity Review (`loan.dtypes` & `loan.info()`):** Verified formatting parameters. Numerical vectors (Age, Income, Credit Score, Monthly Installments) were correctly stored as integer or float streams, while categorical columns were stored as text object streams.
-* **Feature Engineering (Data Transformation):** 
-  The original `Defaulted` target column contained string text (`"Yes"` and `"No"`). Because Python cannot perform direct mathematical aggregations or rate calculations on text words, a new numerical column `defaulted_numeric` was engineered. This mapped `"Yes"` to `1` and `"No"` to `0`, facilitating exact percentage calculations across client demographic cross-sections.
+- Checked for missing values and confirmed that all records were complete.
+- Verified that there were no duplicate records.
+- Validated data types to ensure numerical and categorical variables were correctly formatted for analysis.
+- Created a binary target variable by converting loan default status from text (`Yes`/`No`) to numerical values (`1`/`0`) to support statistical analysis and risk calculations.
+
+![Missing Value Check (`loan.isnull().sum()` output)](images/missing_values_check.png)
+
+![Duplicate Record Check (`loan.duplicated().sum()` output)](images/duplicate_record_check.png)
+
+![Dataset Structure (`loan.info()` output)](images/dataset_structure.png)
+
+![Feature Engineering (`defaulted_numeric` column creation)](images/feature_engineering.png)
 
 ---
 
+## 📊 2. Executive KPI Snapshot
+By executing descriptive aggregations in Python,A baseline dashboard of CrediTrust's current financial posture across all 150 active accounts was established:
+
+*  **Total Capital Deployed:** `$218,109,024.00` *(The total value of loans currently issued)*
+*  **Total Active Borrowers:** `150 customers` 
+*  **Overall Portfolio Default Rate:** `46.67%` *(A critical institutional risk zone)*
+*  **Average Loan Exposure Size:** `$1,454,060.16` per individual borrower
+*  **Expected Monthly Cash Inflow:** `$13,456,957.63` *(Total contractual monthly payments due)*
+*  **High-Risk Concentration:** `109 out of 150 accounts` *(72.7% of the entire customer base)*
+
+> **Analytical Note:** A portfolio default rate of 46.67% means that nearly 1 out of every 2 borrowers is failing to pay back their loan. In retail consumer lending, a safe and manageable default rate typically falls between 3% and 7%. CrediTrust is facing an operational emergency that requires immediate structural intervention.
+
+--- 
 ## 📈 4. Descriptive Analysis (Understanding the Borrower Portfolio)
 
 ### Business Question 1: What is the typical financial profile of a CrediTrust applicant?

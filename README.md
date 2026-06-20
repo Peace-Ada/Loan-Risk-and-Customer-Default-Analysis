@@ -1,27 +1,27 @@
 
 # 🏦 CrediTrust: Loan Risk and Customer Default Analysis
 
-## Table of Contents
+# Table of Contents
 
 - [Project Overview](#project-overview)
+- [Dataset Overview](#dataset-overview)
 - [Business Problem](#business-problem)
-- [Objectives](#objectives)
-- [Data Source](#data-source)
+- [Project Objectives](#project-objectives)
 - [Tools Used](#tools-used)
 - [Data Preparation](#data-preparation)
 - [Feature Engineering](#feature-engineering)
-- [Skills Demonstrated](#skills-demonstrated)
-- [Executive KPI Summary](#executive-kpi-summary)
+- [Executive Summary](#executive-summary)
 - [Key Business Insights](#key-business-insights)
 - [Business Recommendations](#business-recommendations)
+- [Skills Demonstrated](#skills-demonstrated)
 - [Conclusion](#conclusion)
 - [Connect With Me](#connect-with-me)
-
+---
 ## Project Overview
 
 Loan defaults are a major challenge for financial institutions because they increase financial risk and reduce profitability.
 
-This project analyzes customer loan data from CrediTrust to identify patterns in borrower behavior, understand the factors linked to loan default, and support better lending decisions.
+This project analyses customer loan data from CrediTrust to identify patterns in borrower behaviour, uncover the key drivers of loan default, and support better lending decisions.
 
 Using Python, the analysis transforms raw data into meaningful insights through data preparation, exploratory data analysis, customer risk segmentation, and business recommendations.
 
@@ -77,6 +77,20 @@ Before the analysis, the dataset was cleaned and validated to ensure reliable an
 ![Dataset Structure (`loan.info()` output)](images/dataset_structure.png)
 
 ![Feature Engineering (`defaulted_numeric` column creation)](images/feature_engineering.png)
+
+---
+
+## Feature Engineering
+
+To support deeper analysis and customer risk profiling, new features were created from the original dataset.
+
+- Converted the `Defaulted` column from text (`Yes`/`No`) into a binary numerical variable (`1`/`0`) to enable default rate calculations and statistical analysis.
+
+- Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
+
+![Binary Target Variable (`defaulted_numeric` feature creation)](images/defaulted_numeric_feature.png)
+
+![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/risk_segment_feature.png)
 
 ---
 

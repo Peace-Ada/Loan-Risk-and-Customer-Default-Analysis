@@ -106,7 +106,67 @@ By executing descriptive aggregations in Python,A baseline dashboard of CrediTru
 
 > **Analytical Note:** A portfolio default rate of 46.67% means that nearly 1 out of every 2 borrowers is failing to pay back their loan. In retail consumer lending, a safe and manageable default rate typically falls between 3% and 7%. CrediTrust is facing an operational emergency that requires immediate structural intervention.
 
---- 
+
+## Executive Summary
+
+The analysis revealed a high-risk lending portfolio with a significant concentration of borrowers likely to default.
+
+| KPI | Value |
+|------|-------|
+| Portfolio Default Rate | 46.67% |
+| High-Risk Borrowers | 109 (72.7%) |
+| Total Borrowers | 150 |
+| Total Capital Deployed | $218.1M |
+| Average Loan Amount | $1.45M |
+| Expected Monthly Cash Inflow | $13.46M |
+
+> **Key Finding:** Nearly **1 in every 2 borrowers** has defaulted on their loan, while **72.7% of customers** were classified as high risk. These findings suggest that the current loan portfolio is heavily exposed to credit risk and may require stricter lending criteria and risk controls.
+
+![Executive KPI Analysis Output](images/executive_kpi_summary.png)
+
+---
+
+## Key Business Insights
+
+### What is the typical financial profile of a CrediTrust borrower?
+
+![Borrower Profile Summary](images/borrower_profile.png)
+
+The average borrower is 40 years old, earns approximately **$264,714 per year**, and applies for a loan of about **$1.45M**. The median credit score is **579**, which falls within the subprime credit range and suggests that many borrowers already have a higher risk of default.
+
+---
+
+### Do borrowers who default have lower credit scores?
+
+![Credit Score by Default Status](images/credit_score_comparison.png)
+
+Borrowers who defaulted had an average credit score of **532**, compared to **602** for borrowers who repaid successfully. This 70-point difference shows that credit score is one of the strongest indicators of whether a borrower is likely to default.
+
+---
+
+### Does employment status influence default risk?
+
+![Defaults by Employment Status](images/employment_defaults.png)
+
+Default rates were highest among unemployed borrowers, while self-employed borrowers also showed relatively high default levels. This suggests that borrowers with less stable income may find it more difficult to keep up with loan repayments.
+
+---
+
+### How many borrowers fall into each risk category?
+
+![Portfolio Risk Segmentation](images/risk_segmentation.png)
+
+Borrowers were grouped into High, Medium, and Low risk categories using a rule-based risk model. The analysis showed that **72.7%** of borrowers fall into the High-Risk category, indicating that a large portion of the portfolio is exposed to potential credit losses.
+
+---
+
+### Which loan products attract the highest-risk customers?
+
+![Risk Segment by Loan Purpose](images/risk_purpose_chart.png)
+
+High-risk borrowers were found across all loan categories but were most concentrated in Personal and Business loans. These loan types may require stricter approval criteria and closer monitoring to reduce future defaults.
+
+---
 ## 📈 4. Descriptive Analysis (Understanding the Borrower Portfolio)
 
 ### Business Question 1: What is the typical financial profile of a CrediTrust applicant?

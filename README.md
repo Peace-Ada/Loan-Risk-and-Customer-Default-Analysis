@@ -93,20 +93,6 @@ To support deeper analysis and customer risk profiling, new features were create
 ![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/risk_segment_feature.png)
 
 ---
-
-## 📊 2. Executive KPI Snapshot
-By executing descriptive aggregations in Python,A baseline dashboard of CrediTrust's current financial posture across all 150 active accounts was established:
-
-*  **Total Capital Deployed:** `$218,109,024.00` *(The total value of loans currently issued)*
-*  **Total Active Borrowers:** `150 customers` 
-*  **Overall Portfolio Default Rate:** `46.67%` *(A critical institutional risk zone)*
-*  **Average Loan Exposure Size:** `$1,454,060.16` per individual borrower
-*  **Expected Monthly Cash Inflow:** `$13,456,957.63` *(Total contractual monthly payments due)*
-*  **High-Risk Concentration:** `109 out of 150 accounts` *(72.7% of the entire customer base)*
-
-> **Analytical Note:** A portfolio default rate of 46.67% means that nearly 1 out of every 2 borrowers is failing to pay back their loan. In retail consumer lending, a safe and manageable default rate typically falls between 3% and 7%. CrediTrust is facing an operational emergency that requires immediate structural intervention.
-
-
 ## Executive Summary
 
 The analysis revealed a high-risk lending portfolio with a significant concentration of borrowers likely to default.
@@ -125,7 +111,6 @@ The analysis revealed a high-risk lending portfolio with a significant concentra
 ![Executive KPI Analysis Output](images/executive_kpi_summary.png)
 
 ---
-
 ## Key Business Insights
 
 ### What is the typical financial profile of a CrediTrust borrower?

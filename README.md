@@ -97,14 +97,13 @@ The boxplots showed no unrealistic or incorrect values across the key numerical 
 
 ### Feature Engineering
 
-![Feature Engineering (`defaulted_numeric` column creation)](images/loan_defaulted_numeric_feature.png)
-
  A new numerical target variable (`defaulted_numeric`) was created by converting loan default status from text values (`Yes`/`No`) into numerical values (`1`/`0`). This made it possible to calculate default rates and perform risk-based analysis.
+ ![Feature Engineering (`defaulted_numeric` column creation)](images/loan_defaulted_numeric_feature.png)
+
+  Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
 
 ![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/loan_risk_segment_feature.png)
 
- Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
- 
 ---
 ## Executive Summary
 

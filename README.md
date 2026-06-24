@@ -81,7 +81,7 @@ Before the analysis, the dataset was reviewed and prepared to ensure the finding
 
 ### Dataset Structure Review
 
-![Dataset Structure (`loan.info()` output)](images/dataset_structure.png)
+![Dataset Structure (`loan.info()` output)](images/loan_dataset_structure.png)
 
 ### Outlier Assessment
 

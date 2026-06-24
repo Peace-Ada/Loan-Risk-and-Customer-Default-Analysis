@@ -162,41 +162,25 @@ Borrowers were grouped into High, Medium, and Low risk categories using a rule-b
 High-risk borrowers were found across all loan categories but were most concentrated in Personal and Business loans. This suggests that these loan types may require stricter approval criteria and closer monitoring to reduce future defaults.
 
 ---
-##  Business Recommendations
-
-The data shows that loan defaults are predictable. CrediTrust management should take immediate action and implement the following four credit policies:
-
-1. **Set a hard credit score floor at 600.** 
- Update the loan approval software to automatically reject any applicant with a credit score below 600. 
-
-2. **Stop giving unsecured loans to unemployed applicants.**
- Change company policy to require valuable collateral or a high-credit co-signer for all unemployed individuals. 
-  
-3. **Mandate 12-month bank statement audits for self-employed workers.**
- Stop approving self-employed loans based on stated income alone and verify 12 months of official bank statements.
-4. **Build an automated Early Warning System.**
-  Implement software alerts that flag an account the moment a customer misses a single payment or their credit score drops.
-
-   ---
-##  Business Recommendations
-
+## Business Recommendations
+---
 ### 1. Strengthen Credit Score Requirements
 
-Introduce stricter review processes for applicants with credit scores below 600 and require additional risk checks before approval.
+Introduce stricter review processes for applicants with credit scores below 600 and require additional risk assessments before loan approval.
 
 ### 2. Tighten Lending Criteria for Unemployed Applicants
 
-Require collateral, a qualified guarantor, or additional proof of repayment capacity before approving loans for unemployed applicants.
+Require collateral, a qualified guarantor, or additional evidence of repayment capacity before approving loans for unemployed applicants.
 
-### 3. Strengthen Verification for Self-Employed Borrowers
+### 3. Improve Income Verification for Self-Employed Borrowers
 
-Verify income using recent bank statements or other financial records instead of relying solely on declared income.
+Verify income using recent bank statements, tax records, or other financial documentation instead of relying solely on declared income.
 
-### 4. Build an Automated Early Warning System
+### 4. Implement an Automated Early Warning System
 
-Implement automated alerts for missed payments, declining credit scores, or other signs of financial distress so that high-risk accounts can be identified early.
+Deploy automated alerts for missed payments, declining credit scores, or other indicators of financial distress so that high-risk accounts can be identified and managed proactively.
 
-
+---
 
 ## 🏁 8. Conclusion
 CrediTrust's severe **46.67% portfolio default rate** is an underwriting and asset-filtering failure, not a market anomaly. The data clearly proves that loan defaults are tightly concentrated among applicants with subprime credit profiles, previous default histories, or volatile employment positions. By shifting from a loose screening model to the automated, data-validated risk tier structures outlined in this report, CrediTrust can systematically insulate its capital reserves, steady monthly cash flows, and build a safe, profitable loan portfolio.

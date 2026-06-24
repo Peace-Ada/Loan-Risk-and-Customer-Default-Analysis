@@ -9,7 +9,6 @@
 - [Project Objectives](#project-objectives)
 - [Tools Used](#tools-used)
 - [Data Preparation](#data-preparation)
-- [Feature Engineering](#feature-engineering)
 - [Executive Summary](#executive-summary)
 - [Key Business Insights](#key-business-insights)
 - [Business Recommendations](#business-recommendations)
@@ -26,6 +25,16 @@ This project analyses customer loan data from CrediTrust to identify patterns in
 Using Python, the analysis transforms raw data into meaningful insights through data preparation, exploratory data analysis, customer risk segmentation, and business recommendations.
 
 ---
+## Dataset Overview
+
+The dataset contains **150 customer loan records** across multiple variables, including age, income, loan amount, credit score, employment status, loan purpose, and repayment status.
+
+It was provided by **Tech Studio Academy** as part of a project-based data analytics programme for credit risk analysis.
+
+![Dataset Preview (`loan.head()` output)](images/loan_dataset_preview.png)
+
+---
+
 ## Business Problem
 
 CrediTrust is experiencing an increase in loan defaults and needs a better way to identify high-risk borrowers.
@@ -35,7 +44,7 @@ Without clear insights into the factors associated with default, lending decisio
 This project analyzes customer and loan data to identify default patterns, classify borrowers by risk level, and provide data-driven recommendations to improve credit risk management.
 
 ---
-## Objectives
+## Project Objectives
 
 The primary objectives of this project are to:
 
@@ -44,15 +53,6 @@ The primary objectives of this project are to:
 - Classify borrowers into risk categories.
 - Support lending decisions with data-driven insights.
 - Recommend strategies to reduce default risk and improve portfolio performance.
----
-
-## Dataset Overview
-
-The dataset contains **150 customer loan records** across multiple variables, including age, income, loan amount, credit score, employment status, loan purpose, and repayment status.
-
-It was provided by **Tech Studio Academy** as part of a project-based data analytics programme for credit risk analysis.
-
-![Dataset Preview (`loan.head()` output)](images/dataset_preview.png)
 
 ---
 ## Tools Used
@@ -61,25 +61,6 @@ It was provided by **Tech Studio Academy** as part of a project-based data analy
 - **Pandas:** Used for data manipulation, transformation, and analysis.
 - **Jupyter Notebook:** Used to develop and document the end-to-end analytical workflow.
 ---
-## Data Preparation
-
-Before the analysis, the dataset was cleaned and validated to ensure reliable and accurate results.
-
-- Checked for missing values and confirmed that all records were complete.
-- Verified that there were no duplicate records.
-- Validated data types to ensure numerical and categorical variables were correctly formatted for analysis.
-- Created a binary target variable by converting loan default status from text (`Yes`/`No`) to numerical values (`1`/`0`) to support statistical analysis and risk calculations.
-
-![Missing Value Check (`loan.isnull().sum()` output)](images/missing_values_check.png)
-
-![Duplicate Record Check (`loan.duplicated().sum()` output)](images/duplicate_record_check.png)
-
-![Dataset Structure (`loan.info()` output)](images/dataset_structure.png)
-
-![Feature Engineering (`defaulted_numeric` column creation)](images/feature_engineering.png)
-
----
-
 ## Data Preparation
 
 Before the analysis, the dataset was reviewed and prepared to ensure the findings were based on accurate and reliable data.
@@ -92,11 +73,11 @@ Before the analysis, the dataset was reviewed and prepared to ensure the finding
 
 ### Missing Values Check
 
-![Missing Value Check (`loan.isnull().sum()` output)](images/missing_values_check.png)
+![Missing Value Check (`loan.isnull().sum()` output)](images/loan_missing_values_check.png)
 
 ### Duplicate Records Check
 
-![Duplicate Record Check (`loan.duplicated().sum()` output)](images/duplicate_record_check.png)
+![Duplicate Record Check (`loan.duplicated().sum()` output)](images/loan_duplicate_record_check.png)
 
 ### Dataset Structure Review
 
@@ -116,7 +97,7 @@ The boxplots showed no unrealistic or incorrect values across the key numerical 
 
 ### Feature Engineering
 
-![Feature Engineering (`defaulted_numeric` column creation)](images/feature_engineering.png)
+![Feature Engineering (`defaulted_numeric` column creation)](images/defaulted_numeric_feature.png)
 
  A new numerical target variable (`defaulted_numeric`) was created by converting loan default status from text values (`Yes`/`No`) into numerical values (`1`/`0`). This made it possible to calculate default rates and perform risk-based analysis.
 
@@ -124,20 +105,6 @@ The boxplots showed no unrealistic or incorrect values across the key numerical 
 
  Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
  
----
-
-## Feature Engineering
-
-To support deeper analysis and customer risk profiling, new features were created from the original dataset.
-
-- Converted the `Defaulted` column from text (`Yes`/`No`) into a binary numerical variable (`1`/`0`) to enable default rate calculations and statistical analysis.
-
-- Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
-
-![Binary Target Variable (`defaulted_numeric` feature creation)](images/defaulted_numeric_feature.png)
-
-![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/risk_segment_feature.png)
-
 ---
 ## Executive Summary
 
@@ -154,20 +121,10 @@ The analysis revealed a high-risk lending portfolio with a significant concentra
 
 > **Key Finding:** Nearly **1 in every 2 borrowers** has defaulted on their loan, while **72.7% of customers** were classified as high risk. These findings suggest that the current loan portfolio is heavily exposed to credit risk and may require stricter lending criteria and risk controls.
 
-![Executive KPI Analysis Output](images/executive_kpi_summary.png)
-
 ---
 ## Key Business Insights
 
-### What is the typical financial profile of a CrediTrust borrower?
-
-![Borrower Profile Summary](images/borrower_profile.png)
-
-The average borrower is 40 years old, earns approximately **$264,714 per year**, and applies for a loan of about **$1.45M**. The median credit score is **579**, which falls within the subprime credit range and suggests that many borrowers already have a higher risk of default.
-
----
-
-### Why are customers applying for loans?
+### What are the primary reasons why customers request loans from CrediTrust?
 
 ![Loan Purpose Distribution](images/loan_purposes.png)
 
@@ -183,7 +140,7 @@ Borrowers who defaulted had an average credit score of **532**, compared to **60
 
 ---
 
-### Does employment status affect loan default risk?
+### Does a borrower's employment status affect their likelihood of defaulting?
 
 ![Defaults by Employment Status](images/employment_defaults.png)
 
@@ -191,7 +148,7 @@ Default rates were highest among unemployed borrowers, while self-employed borro
 
 ---
 
-### How many borrowers fall into each risk category?
+### How many borrowers fall into High, Medium, and Low risk tiers?
 
 ![Portfolio Risk Segmentation](images/risk_segmentation.png)
 
@@ -199,7 +156,7 @@ Borrowers were grouped into High, Medium, and Low risk categories using a rule-b
 
 ---
 
-### Which loan types have the highest concentration of high-risk borrowers?
+### Which loan purposes are our "High Risk" segments mostly applying for?
 
 ![Risk Segment by Loan Purpose](images/risk_purpose_chart.png)
 

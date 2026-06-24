@@ -123,41 +123,41 @@ The analysis revealed a high-risk lending portfolio with a significant concentra
 
 ---
 ## Key Business Insights
-
-### What are the primary reasons why customers request loans from CrediTrust?
-
+---
+### 1. What are the primary reasons why customers request loans from CrediTrust?
+---
 ![Loan Purpose Distribution](images/loan_purposes.png)
 
 Personal and Business loans account for the largest share of loan applications. This shows that most customers borrow for personal needs or business-related expenses, making these the most important loan categories within the portfolio.
 
 ---
 
-### Do borrowers who default have lower credit scores?
-
+### 2. Do borrowers who default have lower credit scores?
+---
 ![Credit Score by Default Status](images/credit_score_comparison.png)
 
 Borrowers who defaulted had an average credit score of **532**, compared to **602** for borrowers who repaid successfully. This 70-point difference shows that credit score is one of the strongest indicators of whether a borrower is likely to default.
 
 ---
 
-### Does a borrower's employment status affect their likelihood of defaulting?
-
+### 3. Does a borrower's employment status affect their likelihood of defaulting?
+---
 ![Defaults by Employment Status](images/employment_defaults.png)
 
 Default rates were highest among unemployed borrowers, while self-employed borrowers also showed relatively high default levels. This suggests that borrowers with less stable income may find it more difficult to keep up with loan repayments.
 
 ---
 
-### How many borrowers fall into High, Medium, and Low risk tiers?
-
+### 4. How many borrowers fall into High, Medium, and Low risk tiers?
+---
 ![Portfolio Risk Segmentation](images/risk_segmentation.png)
 
 Borrowers were grouped into High, Medium, and Low risk categories using a rule-based risk model. The analysis showed that **72.7%** of borrowers fall into the High-Risk category, indicating that a large portion of the portfolio is exposed to potential credit losses.
 
 ---
 
-### Which loan purposes are our "High Risk" segments mostly applying for?
-
+### 5. Which loan purposes are our "High Risk" segments mostly applying for?
+---
 ![Risk Segment by Loan Purpose](images/risk_purpose_chart.png)
 
 High-risk borrowers were found across all loan categories but were most concentrated in Personal and Business loans. This suggests that these loan types may require stricter approval criteria and closer monitoring to reduce future defaults.

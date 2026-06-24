@@ -80,6 +80,52 @@ Before the analysis, the dataset was cleaned and validated to ensure reliable an
 
 ---
 
+## Data Preparation
+
+Before the analysis, the dataset was reviewed and prepared to ensure the findings were based on accurate and reliable data.
+
+- Checked for missing values and confirmed that all records were complete.
+- Verified that there were no duplicate records in the dataset.
+- Reviewed the dataset structure to ensure variables were stored in the correct format for analysis.
+- Assessed key numerical variables for unusual or extreme values that could affect the results.
+- Converted the loan default status from text values (`Yes`/`No`) into numerical values (`1`/`0`) to support default rate calculations and risk analysis.
+
+### Missing Values Check
+
+![Missing Value Check (`loan.isnull().sum()` output)](images/missing_values_check.png)
+
+### Duplicate Records Check
+
+![Duplicate Record Check (`loan.duplicated().sum()` output)](images/duplicate_record_check.png)
+
+### Dataset Structure Review
+
+![Dataset Structure (`loan.info()` output)](images/dataset_structure.png)
+
+### Outlier Assessment
+
+![Income Distribution](images/income_outliers.png)
+
+![Loan Amount Distribution](images/loan_amount_outliers.png)
+
+![Credit Score Distribution](images/credit_score_outliers.png)
+
+![Monthly Installment Distribution](images/monthly_installment_outliers.png)
+
+The boxplots showed no unrealistic or incorrect values across the key numerical variables. This confirmed that the dataset was suitable for analysis and that the results would not be distorted by data quality issues.
+
+### Feature Engineering
+
+![Feature Engineering (`defaulted_numeric` column creation)](images/feature_engineering.png)
+
+ A new numerical target variable (`defaulted_numeric`) was created by converting loan default status from text values (`Yes`/`No`) into numerical values (`1`/`0`). This made it possible to calculate default rates and perform risk-based analysis.
+
+![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/risk_segment_feature.png)
+
+ Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
+ 
+---
+
 ## Feature Engineering
 
 To support deeper analysis and customer risk profiling, new features were created from the original dataset.
@@ -121,6 +167,14 @@ The average borrower is 40 years old, earns approximately **$264,714 per year**,
 
 ---
 
+### Why are customers applying for loans?
+
+![Loan Purpose Distribution](images/loan_purposes.png)
+
+Personal and Business loans account for the largest share of loan applications. This shows that most customers borrow for personal needs or business-related expenses, making these the most important loan categories within the portfolio.
+
+---
+
 ### Do borrowers who default have lower credit scores?
 
 ![Credit Score by Default Status](images/credit_score_comparison.png)
@@ -129,7 +183,7 @@ Borrowers who defaulted had an average credit score of **532**, compared to **60
 
 ---
 
-### Does employment status influence default risk?
+### Does employment status affect loan default risk?
 
 ![Defaults by Employment Status](images/employment_defaults.png)
 
@@ -145,228 +199,13 @@ Borrowers were grouped into High, Medium, and Low risk categories using a rule-b
 
 ---
 
-### Which loan products attract the highest-risk customers?
+### Which loan types have the highest concentration of high-risk borrowers?
 
 ![Risk Segment by Loan Purpose](images/risk_purpose_chart.png)
 
-High-risk borrowers were found across all loan categories but were most concentrated in Personal and Business loans. These loan types may require stricter approval criteria and closer monitoring to reduce future defaults.
+High-risk borrowers were found across all loan categories but were most concentrated in Personal and Business loans. This suggests that these loan types may require stricter approval criteria and closer monitoring to reduce future defaults.
 
 ---
-## 📈 4. Descriptive Analysis (Understanding the Borrower Portfolio)
-
-### Business Question 1: What is the typical financial profile of a CrediTrust applicant?
-By generating descriptive summary statistics using `loan.describe()`, I created an empirical baseline of our average customer:
-* **Average Age:** 40 years old
-* **Average Annual Income:** `$264,714.00`
-* **Average Requested Loan Size:** `$1,454,060.16`
-* **Median Credit Score:** `579` *(This falls into the subprime/borderline credit band, indicating a historically weak borrower pool)*
-
----
-
-### Business Question 2: Who are our highest-exposure borrowers?
-* **Objective:** Identify the top 10 borrowers who hold the largest loan amounts to locate where the company's heaviest financial risk is concentrated.
-
-#### 💻 Code Query Used:
-```python
-top_10_loans = loan.sort_values(by='Loan_Amount', ascending=False).head(10)
-print(top_10_loans[['customer id', 'age', 'employment status', 'loan amount']])
-```
-
-#### 📋 Printed Text Result:
-```text
-Customer ID   Age   Employment Status   Loan Amount
-1147          53    Employed            2,998,073
-1026          47    Self-Employed       2,908,283
-1009          31    Self-Employed       2,889,592
-1080          21    Employed            2,884,433
-1025          45    Unemployed          2,845,401
-1057          46    Self-Employed       2,835,505
-1065          34    Employed            2,831,573
-1149          47    Self-Employed       2,783,317
-1098          43    Employed            2,777,618
-1077          27    Unemployed          2,767,867
-```
-
-* **Insight:** Sorting the data reveals that our largest individual loans reach up to nearly \$3 Million per customer (such as Customer 1147 at \$2,998,073). Crucially, the data shows that some of these top-exposure loans were given to **unemployed** individuals. Funding multi-million dollar loans for borrowers without a reliable income source creates an extreme concentration of risk for CrediTrust.
-
----
-
-### Business Question 3: Are there extreme outliers in the financial columns that could skew the analysis?
-* **Objective:** Run separate boxplot visualisations for each key financial column to find any weird, impossible, or extreme numbers that could mess up our averages.
-
-#### 📈 1. Income Column Check
-##### 💻 Code Query Used:
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-plt.figure(figsize=(5, 4))
-sns.boxplot(data=loan, y='income', color='skyblue')
-plt.title('Income Distribution & Outliers')
-plt.show()
-```
-##### 📊 Visual Chart Outcome:
-![](images/income_outliers.png)
-
-#### 📈 2. Loan Amount Column Check
-##### 💻 Code Query Used:
-```python
-plt.figure(figsize=(5, 4))
-sns.boxplot(data=loan, y='loan amount', color='salmon')
-plt.title('Loan Amount Distribution & Outliers')
-plt.show()
-```
-##### 📊 Visual Chart Outcome:
-![](images/loan_amount_outliers.png)
-
-#### 📈 3. Credit Score Column Check
-##### 💻 Code Query Used:
-```python
-plt.figure(figsize=(5, 4))
-sns.boxplot(data=loan, y='credit score', color='lightgreen')
-plt.title('Credit Score Distribution & Outliers')
-plt.show()
-```
-##### 📊 Visual Chart Outcome:
-![](images/credit_score_outliers.png)
-
-#### 📈 4. Monthly Installment Column Check
-##### 💻 Code Query Used:
-```python
-plt.figure(figsize=(5, 4))
-sns.boxplot(data=loan, y='monthly installments', color='violet')
-plt.title('Monthly Installment Distribution & Outliers')
-plt.show()
-```
-##### 📊 Visual Chart Outcome:
-![](images/monthly_installment_outliers.png)
-
-* **Analytical Findings:** Looking at all four charts separately, the numbers are wide but completely realistic. There are no impossible data entry mistakes that need to be deleted or cleaned out. This confirms that the high default problem is completely driven by actual customer credit profiles, not broken data.
-
----
-
-### Business Question 4: What are the primary reasons why customers request loans from CrediTrust?
-* **Objective:** Map customer demand patterns to see exactly why people apply for cash.
-
-#### 💻 Code Query Used:
-```python
-plt.figure(figsize=(8, 4))
-sns.countplot(data=loan, x='loan purpose', order=loan['loan purpose'].value_counts().index, palette='Blues_r')
-plt.title('Primary Reasons for Requesting Loans')
-plt.xticks(rotation=30)
-plt.show()
-```
-
-#### 📊 Visual Chart Outcome:
-![](images/loan_purposes.png)
-
-* **Insight:** Personal loans and Business loans dominate our portfolio volume. Because these two categories are typically "unsecured" product lines—meaning they lack strong concrete physical collateral like a vehicle or real estate asset—they represent the highest risk products for CrediTrust to fund without strict underwriting.
-
----
-
-## 📉 5. Default Risk Analysis (Identifying Risk Drivers)
-
----
-
-### Business Question 5: Do people who default have a lower average credit score?
-* **Objective:** Compare the credit scores of people who successfully paid back their loans versus those who defaulted.
-
-#### 💻 Code Query Used:
-```python
-print(loan.groupby('defaulted')['credit score'].mean())
-
-plt.figure(figsize=(6, 5))
-sns.barplot(data=loan, x='defaulted', y='credit score', ci=None, palette='Set2')
-plt.title('Average Credit Score: Repaid (No) vs Defaulted (Yes)')
-plt.xlabel('Has the Customer Defaulted?')
-plt.ylabel('Average Credit Score')
-plt.show()
-```
-
-#### 📊 Visual Chart Outcome:
-![](images/credit_score_comparison.png)
-
-* **Insight:** There is a clear, definitive 70-point gap between the two groups. Those who pay consistently maintain an average score of 602, while those who fail to pay fall deep into subprime territory with an average score of 532. This proves that an automated credit floor is required to screen out unsafe applicants.
-
----
-
-### Business Question 6: Does a borrower's employment status affect their likelihood of defaulting?
-* **Objective:** Evaluate how different employment sectors handle their financial repayment agreements.
-
-#### 💻 Code Query Used:
-```python
-plt.figure(figsize=(8, 4))
-sns.countplot(data=loan, x='employment status', hue='defaulted', palette='viridis')
-plt.title('Defaults Across Employment Statuses')
-plt.xlabel('Employment Status')
-plt.ylabel('Number of Customers')
-plt.legend(title='Defaulted?')
-plt.xticks(rotation=15)
-plt.show()
-```
-
-#### 📊 Visual Chart Outcome:
-![](images/employment_defaults.png)
-
-* **Insight:** Unemployed applicants carry the absolute highest proportional default rate due to the complete lack of a regular salary stream. However, self-employed applications also carry substantial default numbers due to irregular business cash flow cycles.
-
----
-
-## 🎯 6. Rule-Based Portfolio Risk Segmentation
-
-### Business Question 7: How many of the current borrowers fall into High, Medium, and Low risk tiers?
-* **Objective:** Programmatically divide the database into actionable categories using a multi-conditional rule-based function.
-
-#### 💻 Code Query Used:
-```python
-def assign_risk_level(row):
-    if row['credit score'] < 600 or row['previous default'] == 'Yes':
-        return 'High Risk'
-    elif 600 <= row['credit score'] <= 700:
-        return 'Medium Risk'
-    else:
-        return 'Low Risk'
-
-loan['Risk_Segment'] = loan.apply(assign_risk_level, axis=1)
-print(loan['Risk_Segment'].value_counts())
-
-plt.figure(figsize=(6, 4))
-sns.countplot(data=loan, x='Risk_Segment', order=['Low Risk', 'Medium Risk', 'High Risk'], palette='coolwarm')
-plt.title('CrediTrust Portfolio Risk Breakdown')
-plt.xlabel('Risk Segment Category')
-plt.ylabel('Number of Borrowers')
-plt.show()
-```
-
-#### 📊 Visual Chart Outcome:
-![](images/risk_segmentation.png)
-
-* **Insight:** A staggering 72.7% (109 out of 150) of the active accounts belong in the High-Risk category. This means CrediTrust is heavily exposed to subprime capital losses because the baseline approval filter has been far too lenient.
-
----
-
-### Business Question 8: Which loan purposes are our high-risk customers mostly applying for?
-* **Objective:** Identify which loan product categories hold the highest concentration of toxic debt.
-
-#### 💻 Code Query Used:
-```python
-plt.figure(figsize=(9, 5))
-sns.countplot(data=loan, x='loan purpose', hue='Risk_Segment', palette='magma')
-plt.title('Loan Purposes Demanded by Each Risk Tier')
-plt.xlabel('Reason for Loan')
-plt.ylabel('Number of Applications')
-plt.xticks(rotation=30)
-plt.legend(title='Risk Tier')
-plt.show()
-```
-
-#### 📊 Visual Chart Outcome:
-![](images/risk_purpose_chart.png)
-
-* **Insight:** High-risk borrowers are not isolated to a single category—they are spread heavily across all four loan purposes. However, they are most dangerous inside the Personal and Business loan segments because these accounts lack physical property collateral for the company to seize and liquidate during a default emergency.
-
----
-
 ## 💼 7. Data-Backed Business Recommendations
 
 The data shows that loan defaults are predictable. CrediTrust management should take immediate action and implement the following four credit policies:

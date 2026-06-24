@@ -97,11 +97,11 @@ The boxplots showed no unrealistic or incorrect values across the key numerical 
 
 ### Feature Engineering
 
-![Feature Engineering (`defaulted_numeric` column creation)](images/defaulted_numeric_feature.png)
+![Feature Engineering (`defaulted_numeric` column creation)](images/loan_defaulted_numeric_feature.png)
 
  A new numerical target variable (`defaulted_numeric`) was created by converting loan default status from text values (`Yes`/`No`) into numerical values (`1`/`0`). This made it possible to calculate default rates and perform risk-based analysis.
 
-![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/risk_segment_feature.png)
+![Rule-Based Risk Segment Feature (`Risk_Segment` column creation)](images/loan_risk_segment_feature.png)
 
  Created a `Risk_Segment` feature using a rule-based classification model to categorize borrowers into **High Risk**, **Medium Risk**, and **Low Risk** groups based on their credit score and previous default history.
  
@@ -150,7 +150,7 @@ Default rates were highest among unemployed borrowers, while self-employed borro
 
 ### 4. How many borrowers fall into High, Medium, and Low risk tiers?
 ---
-![Portfolio Risk Segmentation](images/risk_segmentation.png)
+![Portfolio Risk Segmentation](images/loan_risk_segmentation.png)
 
 Borrowers were grouped into High, Medium, and Low risk categories using a rule-based risk model. The analysis showed that **72.7%** of borrowers fall into the High-Risk category, indicating that a large portion of the portfolio is exposed to potential credit losses.
 

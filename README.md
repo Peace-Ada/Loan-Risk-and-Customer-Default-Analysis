@@ -149,7 +149,7 @@ Default rates were highest among unemployed borrowers, while self-employed borro
 
 ### 4. How many borrowers fall into High, Medium, and Low risk tiers?
 ---
-![Portfolio Risk Segmentation](images/loan_risk_segment_feature.png)
+![Portfolio Risk Segmentation](images/loan_risk_segment_feature2.png)
 
 Borrowers were grouped into High, Medium, and Low risk categories using a rule-based risk model. The analysis showed that **72.7%** of borrowers fall into the High-Risk category, indicating that a large portion of the portfolio is exposed to potential credit losses.
 

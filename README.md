@@ -205,3 +205,4 @@ By strengthening credit assessment processes, improving borrower verification, a
 Let's connect:
 LinkedIn: [Peace Adaobi](https://www.linkedin.com/in/peace-ada-95b341341)  
 Email: [peaceada100@gmail.com](mailto:peaceada100@gmail.com)
+Portfolio: [Peace Adaobi](https://www.datascienceportfol.io/PeaceAdaobi)

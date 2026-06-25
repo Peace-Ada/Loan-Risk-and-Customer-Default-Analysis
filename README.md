@@ -193,6 +193,10 @@ Deploy automated alerts for missed payments, declining credit scores, or other i
 - Business Insight Generation
 - Data-Driven Decision Making
 ---
+##  Conclusion
 
-## 🏁 8. Conclusion
-CrediTrust's severe **46.67% portfolio default rate** is an underwriting and asset-filtering failure, not a market anomaly. The data clearly proves that loan defaults are tightly concentrated among applicants with subprime credit profiles, previous default histories, or volatile employment positions. By shifting from a loose screening model to the automated, data-validated risk tier structures outlined in this report, CrediTrust can systematically insulate its capital reserves, steady monthly cash flows, and build a safe, profitable loan portfolio.
+This analysis showed that loan defaults at CrediTrust are strongly influenced by factors such as credit score, employment status, and borrower risk level. The findings also revealed that a large proportion of the current loan portfolio falls within the High-Risk category, increasing the company's exposure to potential losses.
+
+By strengthening credit assessment processes, improving borrower verification, and implementing proactive risk monitoring, CrediTrust can make more informed lending decisions and reduce future default risk.
+
+---

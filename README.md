@@ -202,8 +202,6 @@ By strengthening credit assessment processes, improving borrower verification, a
 ---
 ## Connect With Me
 
-📧 Email: peaceada100@gmail.com
-
-💼 LinkedIn: https://linkedin.com/in/your-profile
-
-💻 GitHub: https://github.com/yourusername
+Let's connect:
+LinkedIn: [Peace Adaobi](https://www.linkedin.com/in/peace-ada-95b341341)  
+Email: [peaceada100@gmail.com](mailto:peaceada100@gmail.com)

@@ -182,5 +182,17 @@ Deploy automated alerts for missed payments, declining credit scores, or other i
 
 ---
 
+## Skills Demonstrated
+---
+- Data Cleaning & Validation
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Risk Analysis
+- Customer Risk Segmentation
+- Data Visualization
+- Business Insight Generation
+- Data-Driven Decision Making
+---
+
 ## 🏁 8. Conclusion
 CrediTrust's severe **46.67% portfolio default rate** is an underwriting and asset-filtering failure, not a market anomaly. The data clearly proves that loan defaults are tightly concentrated among applicants with subprime credit profiles, previous default histories, or volatile employment positions. By shifting from a loose screening model to the automated, data-validated risk tier structures outlined in this report, CrediTrust can systematically insulate its capital reserves, steady monthly cash flows, and build a safe, profitable loan portfolio.

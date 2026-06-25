@@ -1,7 +1,7 @@
 
 #  CrediTrust: Loan Risk and Customer Default Analysis
 
-# Table of Contents
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Dataset Overview](#dataset-overview)

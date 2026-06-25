@@ -1,5 +1,5 @@
 
-# 🏦 CrediTrust: Loan Risk and Customer Default Analysis
+#  CrediTrust: Loan Risk and Customer Default Analysis
 
 # Table of Contents
 

@@ -200,3 +200,10 @@ This analysis showed that loan defaults at CrediTrust are strongly influenced by
 By strengthening credit assessment processes, improving borrower verification, and implementing proactive risk monitoring, CrediTrust can make more informed lending decisions and reduce future default risk.
 
 ---
+## Connect With Me
+
+📧 Email: peaceada100@gmail.com
+
+💼 LinkedIn: https://linkedin.com/in/your-profile
+
+💻 GitHub: https://github.com/yourusername
